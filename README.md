@@ -62,3 +62,29 @@ can never be listed by name. b12 adds a "📱 iPhone's Dutch voice" option:
 the app asks iOS for Dutch without naming a voice and iOS uses whatever is
 selected under Settings → Accessibility → Spoken Content → Voices → Dutch.
 Select Claire (Enhanced) there, then tap that button in You → Dutch voice.
+
+## b13 (24 sep) — stability
+
+- The page behind a session or dialogue is now hard-locked (iOS could
+  otherwise scroll it and drag the overlay along, so taps landed beside
+  the buttons).
+- An update is only offered when it is a newer build number, and the
+  versioned address is cleaned after loading — no more reload loops when
+  GitHub's cache is briefly behind.
+- You → Backup shows "diagnostics": the last errors, if any, with a Show
+  button. Screenshot that if the app ever misbehaves.
+- With "📱 iPhone's Dutch voice" selected, both dialogue speakers use the
+  iPhone voice (Claire), told apart by pitch, instead of the built-in
+  Xander.
+
+## What "B2" means here, honestly
+
+The app covers: 2,648 words A1→B2 in 35 topic units with spaced
+repetition; 41 grammar lessons in CEFR order with examples and drills;
+220 lesson dialogues plus passages for listening comprehension; sounds
+and shadowing for pronunciation; typing exercises for spelling. That is
+the full receptive core of B2 and most of the productive vocabulary.
+What no app can give you on its own, and what a B2 exam (Staatsexamen
+NT2 II) tests: writing longer texts with correction, and free
+conversation with real people at natural speed. Plan those alongside
+the app from B1 onwards.
