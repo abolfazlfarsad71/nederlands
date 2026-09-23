@@ -54,3 +54,11 @@ in `index.html`; give every new upload a new tag.
 - About 75 word emojis corrected; the picture exercise only uses words
   whose picture is unambiguous.
 - New-word card redesigned as a "scene" with a lesson progress trail.
+
+## b12 (24 sep) — Claire (Enhanced)
+
+Safari on iOS hides voices you download yourself from web apps, so Claire
+can never be listed by name. b12 adds a "📱 iPhone's Dutch voice" option:
+the app asks iOS for Dutch without naming a voice and iOS uses whatever is
+selected under Settings → Accessibility → Spoken Content → Voices → Dutch.
+Select Claire (Enhanced) there, then tap that button in You → Dutch voice.
