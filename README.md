@@ -88,3 +88,21 @@ What no app can give you on its own, and what a B2 exam (Staatsexamen
 NT2 II) tests: writing longer texts with correction, and free
 conversation with real people at natural speed. Plan those alongside
 the app from B1 onwards.
+
+## b14 (27 sep)
+
+- 805 more words got a relevant emoji (1,796 of 2,648 now); the new-word
+  card no longer falls back to the unit icon (the bread on every food
+  word) but shows a coloured letter tile.
+- Fixed the article spacing in answers ("het broodje", not "hetbroodje").
+- Fixed the new-word card sometimes opening with a large empty area above
+  the word (two decorative shapes were taking up layout space).
+- Five speaking sentences per lesson (six on the 45-minute plan).
+- Grammar path re-paced: each level's rules are spread over the first
+  ~75% of that level's road, strictly in order; a lesson counts as learned
+  after 3+ questions at 70%+, weaker ones come back as "again" before
+  anything new; reviews only when everything unlocked is learned and
+  never within three days. The Today card says when the next rule opens.
+- Dialogues: with the iPhone voice, the first speaker is now a deep-pitched
+  male voice (Claire pitched down, still clear). You → Dutch voice lets
+  you pick the built-in Xander or Ellen instead.
