@@ -124,3 +124,12 @@ the app from B1 onwards.
   word leaves the pool when you get it right; wrong ones return. Reset
   puts every word back. Quick review does not touch the spaced-repetition
   schedule of the daily session.
+
+## b16 (10 okt) — smarter quick review
+
+Each 30-word session now takes what you need most first: words missed in
+the last week (in quick review or in the daily session), then
+historically weak words, then the ones unseen longest. A word leaves the
+pool only after two correct answers in a row, the second one on a later
+day; any miss — anywhere — puts it back. The card shows how many words
+are one answer away.
