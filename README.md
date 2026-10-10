@@ -106,3 +106,21 @@ the app from B1 onwards.
 - Dialogues: with the iPhone voice, the first speaker is now a deep-pitched
   male voice (Claire pitched down, still clear). You → Dutch voice lets
   you pick the built-in Xander or Ellen instead.
+
+## b15 (10 okt) — grammar every day, quick review
+
+- Grammar is now part of every daily session (it was every other day) and
+  comes right after the first new words, so it is reached even when a
+  session is cut short. A rule now counts as "seen" the moment its
+  explanation is shown, so leaving before the questions no longer makes
+  the same rule come back as new the next day.
+- Catch-up: when the road is three or more rules ahead of what you have
+  learned, two new rules are taught per day until you are level.
+- Every session also asks 3 review questions on rules already learned
+  (5 when there is nothing new), oldest first.
+- Quick review: a card on Today and in Words shows how many words you
+  have met so far and how many are still to review. Each session is 30
+  multiple-choice questions (Dutch→English and English→Dutch mixed). A
+  word leaves the pool when you get it right; wrong ones return. Reset
+  puts every word back. Quick review does not touch the spaced-repetition
+  schedule of the daily session.
