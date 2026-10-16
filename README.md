@@ -147,3 +147,14 @@ are one answer away.
 - Quick review: one correct answer now counts a word as reviewed (the
   two-answer rule hid progress); the card shows reviewed / to go, missed
   words coming back, and the last session's score. Smart ordering kept.
+
+## b18 (16 okt) — no sound on iOS 27
+
+Since iOS 26, web speech inside a home-screen app is routed like ambient
+audio: muted by the ring/silent switch (or Action button) unless the page
+requests a playback audio session. b18 requests that session, unlocks
+audio on the first tap, and starts speech synchronously inside the tap.
+Voices with the same name (iOS 27 lists two "Xander"s: basic and
+enhanced) are told apart by their identifier, and the enhanced one is
+preferred. Voice check shows each voice's quality, the last utterance's
+start/end status and the audio session type.
