@@ -133,3 +133,17 @@ historically weak words, then the ones unseen longest. A word leaves the
 pool only after two correct answers in a row, the second one on a later
 day; any miss — anywhere — puts it back. The card shows how many words
 are one answer away.
+
+## b17 (16 okt) — iOS 27 speech, quick-review counting
+
+- Speech hardened for iOS 27: the voice is resolved fresh from the engine
+  at every utterance (a voice object kept from before an iOS update is
+  stale and iOS 27 drops it silently); speak() no longer races a
+  cancel(); any speech error is caught, logged, and the sentence is
+  retried once with the system default voice. Voices that arrive late
+  after launch are picked up. You → Dutch voice shows a "Voice check"
+  line (voices found, last speech error) and ↻ now also plays a test
+  sentence.
+- Quick review: one correct answer now counts a word as reviewed (the
+  two-answer rule hid progress); the card shows reviewed / to go, missed
+  words coming back, and the last session's score. Smart ordering kept.
