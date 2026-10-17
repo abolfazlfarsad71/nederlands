@@ -194,3 +194,10 @@ it, so the fetch step in b21 failed on the phone. Clips are now played
 straight from the provider URL inside the tap; on a media error the next
 provider is tried, then the phone voice. The error log now records the
 message, not just the stack.
+
+## b23 (17 okt) — audio diagnostics
+
+You → Dutch voice → "Audio diagnostics": Tone A plays a sound built into
+the app through the media player, Tone B through the low-level audio
+path, and "Reach voice services" checks whether the online voices can be
+contacted from the phone. Media errors now include Safari's message.
