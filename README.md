@@ -176,3 +176,13 @@ sends the sentence text to Google). The online voice works on phones
 whose Safari speech engine is silent, as on iOS 27. Dialogues keep two
 speakers (pace/pitch difference), 🐢 slow works, and if a clip fails to
 load the app falls back to the phone voice for that sentence.
+
+## b21 (17 okt) — online voice that actually plays
+
+Google refused the audio requests (NotSupportedError). The online voice
+now uses Amazon Polly's Dutch voices Lotte and Ruben (male, used for the
+first dialogue speaker) via StreamElements, with Google as a second try.
+Clips are fetched as data so any refusal is reported by name, cached in
+memory and in the browser cache (repeated words play instantly, even
+offline once heard), and played through an audio element unlocked by a
+valid silent clip on the first tap.
