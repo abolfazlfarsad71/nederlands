@@ -3,8 +3,9 @@
    last cached copy is served. Audio (audio/*.mp3): cache-first — a lesson's recordings are downloaded once and then
    served from the cache, with byte-range support so the media player can seek inside a file, online or offline.
    Learner progress is in localStorage and is never touched by this worker. */
-const CACHE = 'nl-app-v1';
+const CACHE = 'nl-app-v2';
 const AUDIO = 'nl-audio-v1';
+const filling = new Set();
 self.addEventListener('install', e => { self.skipWaiting(); });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE && k !== AUDIO).map(k => caches.delete(k)))).then(() => self.clients.claim()));
@@ -14,10 +15,10 @@ async function audioResponse(req) {
   const cache = await caches.open(AUDIO);
   let full = await cache.match(key);
   if (!full) {
-    const res = await fetch(key, { cache: 'no-store' });
-    if (!res || !res.ok) return res;
-    await cache.put(key, res.clone());
-    full = res;
+    // not cached yet: answer this request straight from the network (so the first clip plays at once)
+    // and download the whole file into the cache in the background for next time
+    if (!filling.has(key)) { filling.add(key); fetch(key, { cache: 'no-store' }).then(r => { if (r && r.ok) return cache.put(key, r); }).catch(() => { }).finally(() => filling.delete(key)); }
+    return fetch(req);
   }
   const buf = await full.arrayBuffer();
   const total = buf.byteLength;

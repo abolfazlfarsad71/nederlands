@@ -216,6 +216,7 @@ source; choose Nathalie or Pim as your main voice. In dialogues each
 character keeps their own voice. Phone voice and Online voice remain as
 alternatives.
 
-Upload: index.html, nederlands.html, README.md, sw.js and the audio
-folder (four parts, each at most 100 files, because GitHub's uploader
-takes at most 100 files per commit).
+The recordings are bundled into eight MP3 files (audio/A1…A6 for the
+lessons in road order, B1 grammar and extra units, B2 conversations,
+role-plays and passages) plus audio/index.json — all under GitHub's
+25 MB-per-file limit, so the whole app uploads in one commit.
