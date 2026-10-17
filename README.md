@@ -158,3 +158,21 @@ Voices with the same name (iOS 27 lists two "Xander"s: basic and
 enhanced) are told apart by their identifier, and the enhanced one is
 preferred. Voice check shows each voice's quality, the last utterance's
 start/end status and the audio session type.
+
+## b19 (16 okt) — self-healing voice
+
+If the iPhone's selected Dutch voice never starts speaking (an iOS
+update can delete a downloaded voice while leaving it selected), the app
+notices within 1.5 s, switches to the best named voice, tells you, and
+keeps using it until you press ↻. A named voice that never starts is
+retried once with the system default.
+
+## b20 (17 okt) — online voice
+
+You → Dutch voice now has a source switch: 📱 Phone voice (Apple's
+built-in speech, offline) or 🌐 Online voice (Google's Dutch
+text-to-speech fetched per sentence and played as audio; needs internet,
+sends the sentence text to Google). The online voice works on phones
+whose Safari speech engine is silent, as on iOS 27. Dialogues keep two
+speakers (pace/pitch difference), 🐢 slow works, and if a clip fails to
+load the app falls back to the phone voice for that sentence.
