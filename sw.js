@@ -3,7 +3,7 @@
    last cached copy is served. Audio (audio/*.mp3): cache-first — a lesson's recordings are downloaded once and then
    served from the cache, with byte-range support so the media player can seek inside a file, online or offline.
    Learner progress is in localStorage and is never touched by this worker. */
-const CACHE = 'nl-app-v2';
+const CACHE = 'nl-app-v3';
 const AUDIO = 'nl-audio-v1';
 const filling = new Set();
 self.addEventListener('install', e => { self.skipWaiting(); });
@@ -34,7 +34,7 @@ async function audioResponse(req) {
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
-  if (/\/audio\/.*\.mp3(\?|$)/.test(req.url)) { e.respondWith(audioResponse(req)); return; }
+  if (/\.mp3(\?|$)/.test(req.url)) { e.respondWith(audioResponse(req)); return; }
   e.respondWith((async () => {
     const cache = await caches.open(CACHE);
     const cacheKey = req.url.split('?')[0];
