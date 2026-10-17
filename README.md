@@ -201,3 +201,21 @@ You → Dutch voice → "Audio diagnostics": Tone A plays a sound built into
 the app through the media player, Tone B through the low-level audio
 path, and "Reach voice services" checks whether the online voices can be
 contacted from the phone. Media errors now include Safari's message.
+
+## b24 (18 okt) — built-in recordings
+
+Every word, example sentence, grammar example, dialogue line, listening
+passage and role-play line is now shipped as audio with the app
+(audio/…, about 110 MB in total), recorded with two neural Dutch voices:
+Nathalie (woman, Flemish) and Pim (man, Netherlands Dutch). The app
+plays them through the same media player that Tone A uses, so they work
+wherever that tone works — no speech engine, no outside service — and
+offline once a lesson has been heard (the service worker caches the
+lesson's file). You → Dutch voice: 📦 Built-in recordings is the default
+source; choose Nathalie or Pim as your main voice. In dialogues each
+character keeps their own voice. Phone voice and Online voice remain as
+alternatives.
+
+Upload: index.html, nederlands.html, README.md, sw.js and the audio
+folder (four parts, each at most 100 files, because GitHub's uploader
+takes at most 100 files per commit).
