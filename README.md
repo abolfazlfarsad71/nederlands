@@ -186,3 +186,11 @@ Clips are fetched as data so any refusal is reported by name, cached in
 memory and in the browser cache (repeated words play instantly, even
 offline once heard), and played through an audio element unlocked by a
 valid silent clip on the first tap.
+
+## b22 (17 okt) — online voice plays directly
+
+The voice services allow a page to play their audio but not to download
+it, so the fetch step in b21 failed on the phone. Clips are now played
+straight from the provider URL inside the tap; on a media error the next
+provider is tried, then the phone voice. The error log now records the
+message, not just the stack.
