@@ -220,3 +220,32 @@ The recordings are bundled into eight MP3 files (audio/A1…A6 for the
 lessons in road order, B1 grammar and extra units, B2 conversations,
 role-plays and passages) plus audio/index.json — all under GitHub's
 25 MB-per-file limit, so the whole app uploads in one commit.
+
+## b29 (1 nov) — audio rebuilt, grammar text every day, back button, fair cloze
+
+- **Recordings play completely, immediately and in the right place.** The old
+  player seeked inside the 25 MB audio bundles; on the phone that seek landed
+  late, early or not at all, which produced cut-off words, six-second waits,
+  and the infamous *"feestdag… maandag…"* — the top of the A2 bundle playing
+  aloud after a failed seek. Each clip is now fetched as its own small byte
+  range, cut on an MP3 frame boundary and played as a blob from its first
+  sound to its last (`ended`). Clips are prefetched the moment a card appears,
+  dialogue lines all at once, so the usual wait is zero. Dialogues advance on
+  the real end of each line; the old time estimate only guards against a clip
+  that never arrives. No audio re-upload needed; `sw.js` is unchanged.
+- Recordings play at their natural pace: profiles below 1× are moved to 1×
+  once (a toast explains), because stretching the clips on the phone is what
+  made the voice sound uneven. 🐢 next to any 🔊 still plays slowly, and the
+  speed buttons still work.
+- Grammar: every session starts with a rule to read — a new one, or, when
+  nothing new is due, the oldest learned rule as a review — followed by its
+  questions. Extra review questions are now preceded by a recap card with the
+  rule and three examples. Review questions no longer reset a rule's "taught"
+  date (they update a separate review date), so spaced reviews come due again.
+- ‹ button at the top of every session goes back to the previous card. Cards
+  seen again this way are not graded or counted twice; the counter shows ↶.
+- Fill-the-blank for multi-word entries ("op het laatste moment") blanks the
+  whole phrase, so the answer no longer appears in the sentence; when the
+  phrase does not stand together in the sentence a plain English→Dutch
+  question is asked instead. English→Dutch questions for phrases get phrase
+  distractors.
