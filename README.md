@@ -249,3 +249,31 @@ role-plays and passages) plus audio/index.json — all under GitHub's
   phrase does not stand together in the sentence a plain English→Dutch
   question is asked instead. English→Dutch questions for phrases get phrase
   distractors.
+
+## b30 (9 nov) — exact pictures, slower listening, mistakes come back, dialogue check, new look
+
+- **Pictures that mean the word.** Every picture was re-checked. A word now has a picture only when it shows
+  exactly that thing: 655 words keep an exact emoji, 73 words got a hand-drawn picture (tafel, kussen, deken,
+  plafond, vloer, gootsteen, magnetron, oven, fornuis, koelkast, wasmachine, trap, zolder, kelder, stopcontact …,
+  the rooms, body parts such as knie / schouder / rug marked on a figure, colour swatches for grijs / goud /
+  zilver). The 1,068 loose pictures (radio for magnetron, chair for tafel, scarf for deken, arrow for plafond)
+  are gone; those words show a clean letter tile instead of a misleading image. On the new-word card the picture
+  floats in 3-D and turns when you drag a finger over it.
+- **Listening speed.** Every listening exercise (lesson dialogue, single word, passage, numbers, dictation) has a
+  speed switch: normal · slower (.85×) · slow (.7×) · very slow (.55×). The choice is remembered and replays the
+  audio at once. In the dialogue player the 🐢 button became the same speed button.
+- **A wrong answer comes back.** In the session the same question returns three cards later and must be answered
+  right twice in a row before it leaves. Every miss (word, grammar question, listening question) is also kept in a
+  mistakes list: it opens the next daily sessions ("from your mistakes") until it has been answered right in two
+  later sessions. Today shows "N questions to master"; tapping it practises them straight away. Unit tests and
+  level checkpoints do not repeat questions.
+- **Dialogues checked** (all 220 lesson dialogues, Dutch, English and questions). Fixed: speakers shown the wrong
+  way round in 12 dialogues (e.g. the neighbour saying "Ik ben Aylin", the ticket clerk ordering the ticket, the
+  adviser asking the customer's questions), six lines that were wrong or made no sense (rewritten and recorded
+  with the same two voices; the recordings travel inside index.html, no audio upload), a question that asked
+  about the wrong person, and several English lines (stil = quiet, ijzel = black ice, gezin = family).
+  "Het nieuwe huis" now asks about the toilet and the bathroom separately.
+- **New look**: deeper colours, glass cards, floating tab bar, larger play button, clearer right/wrong feedback.
+
+Upload for this build: only `index.html` and `nederlands.html`. `sw.js`, the audio files and `index.json` are
+unchanged.

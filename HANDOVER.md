@@ -1,4 +1,4 @@
-# Nederlands — A0 naar B2 · project handover (build 1 nov · b29)
+# Nederlands — A0 naar B2 · project handover (build 9 nov · b30)
 
 Private Dutch-learning web app for two learners (Emre & Aylin, Volendam), hosted on GitHub Pages
 (repository `abolfazlfarsad71/nederlands`, site `https://abolfazlfarsad71.github.io/nederlands/`),
@@ -6,14 +6,14 @@ added to the iPhone home screen as a web app. Everything is in ONE file: `index.
 (`nederlands.html` is an identical copy kept for an old link).
 
 ## Files in this package
-- `index.html` / `nederlands.html` — the whole app (CSS + data + JS), build string `const BUILD = '1 nov · b29'`.
+- `index.html` / `nederlands.html` — the whole app (CSS + data + JS), build string `const BUILD = '9 nov · b30'`.
 - `sw.js` — service worker: app files network-first with offline fallback; `*.mp3` cache-first with
   byte-range support and an in-memory buffer so clips seek instantly, online or offline.
 - `manifest.webmanifest`, `icon.svg` — home-screen app metadata.
 - `audio/A1…A6.mp3, B1.mp3, B2.mp3, audio/index.json` — built-in recordings (see below). In the live
   repository these currently sit in the ROOT (GitHub's uploader flattened the folder); the app looks in
   `audio/` first and then next to `index.html`, so both layouts work.
-- `README.md` — change log of every build (b9 → b28), update mechanism, upload steps.
+- `README.md` — change log of every build (b9 → b30), update mechanism, upload steps.
 
 ## How updates reach the phones (must be preserved)
 - Bump `BUILD` on every upload. The app fetches its own file with `cache: no-store`, compares the BUILD string
@@ -94,3 +94,24 @@ added to the iPhone home screen as a web app. Everything is in ONE file: `index.
 Add file → Upload files → drag files → commit `bNN`. App-only changes: `index.html`, `nederlands.html`
 (+ `sw.js` when it changed). Audio: the 8 MP3s + `index.json` (≤100 files and ≤25 MB per file per commit).
 Wait ~10 min, open the app → Update.
+
+## Added in b30 (9 Nov 2026)
+- Pictures: word field `e` is an exact emoji, or `@name` = a drawing in `PIC` (64×64 SVG markup, fills from CSS classes
+  under `svg.pic`, gradients in the hidden `<svg><defs>` right after `<body>`), `@sw:#hex` colour swatch,
+  `@room:🛋️` room with furniture, `@body:knee` body part. `picOf(e)` renders all of them; never print `w.e` raw.
+  728 of 2,648 words have a picture (655 emoji, 73 drawn); the rest deliberately have none. New-word card:
+  `.scene-stage > .scene-pic` floats in 3-D (CSS `float3d`), drag sets `--rx/--ry`.
+- Listening speed: `ST.lsp` (1 / .85 / .7 / .55), `speedBar()`, `[data-lsp]` click handler, `LS_REPLAY` (the current
+  card's replay function, cleared in `step`). Players take `opt.mul`; `[data-say][data-ls]` buttons use it.
+- Mistakes: `ST.miss[key] = {n, s, t}` with keys `w:<wordId>`, `g:<grammarId>:<drill>`, `l:<lessonId>:<q>`,
+  `p:<passageId>:<q>`; `missNote` (a right answer counts only in a session other than the one of the miss; two
+  needed), `missItems(limit)` opens `buildDaily` (8 per session), `missCard()` / `practiseMistakes()` on Today.
+  In-session: `queueRetry` inserts `retryItem(orig, {need, c})` 3 cards later (7 for the confirmation), capped at
+  half the session; retry cards are not graded again (`ex.retry` branch in `advance`). `noRetry` for tests.
+  Exercises that are plain objects carry `remake()` so a retry is reshuffled.
+- Corrected dialogue lines are recorded with the same Piper voices and embedded as base64 MP3 in `XCLIP`
+  (`localClip` checks it first; clip id `@<voice><normalised text>`). If the audio bundles are ever regenerated,
+  include these six lines and empty `XCLIP`.
+- Not re-checked in b30: the 35 unit conversations (`CONV`), 24 role-plays and 20 passages; B1/B2 lesson dialogues
+  were checked for errors and roles but some remain vocabulary-driven rather than natural (e.g. money-8).
+- localStorage keys unchanged; `ST.miss` and `ST.lsp` are added by the additive migration.
